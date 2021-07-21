@@ -1,29 +1,29 @@
 ALGORITHM Check_Sentence
 VAR
-    i: INTEGER:=1;
-    j,k: INTEGER;
-    n_words: INTEGER:=1;
+    j,i: INTEGER;
+    n_words: INTEGER:=0;
     n_vowels: INTEGER:=0;
-    length: INTEGER:=0;
+    length: INTEGER:=1;
     sentence: STRING;
+    char: CHARACTER:="";
+
 BEGIN
-    // condition on the read?
-    Read(sentence)
-   WHILE (sentence[i] NOT ".") DO
-        i:=i+1
+   WHILE (char NOT ".") DO //creating the sentence
+        Read(char)
+        length:=length+1
+        sentence:= sentence + char
     end_while
-    length:=i 
-    for j from 1 to length
+    for i from 1 to length // counting the number of words
         if (sentence[i]=" ") then 
             n_words:= n_words + 1
         end_if
     end_for;
-    for k from 1 to length
-        if (sentence[i]="a" Or sentence[i]="e" Or sentence[i]="i" Or sentence[i]="o" Or sentence[i]="u" Or sentence[i]="y") then 
+    for j from 1 to length // counting the number of values
+        if (sentence[j]="a" Or sentence[i]="e" Or sentence[i]="i" Or sentence[i]="o" Or sentence[i]="u" Or sentence[i]="y") then 
             n_vowels:= n_vowels + 1
         end_if
     end_for;
-
+    //output
     Write(n_words)
     Write(n_vowels)
     Write(length);
