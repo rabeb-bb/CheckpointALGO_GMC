@@ -8,17 +8,17 @@ VAR
     char: CHARACTER:="";
 
 BEGIN
-   WHILE (char NOT ".") DO //creating the sentence
+   WHILE (char <> ".") DO //creating the sentence
         Read(char)
         lngth:=lngth+1
         sentence:= sentence + char
     end_while
-    for i from 1 to lngth do// counting the number of words
+    for i from 1 to lngth step 1 do// counting the number of words
         if (sentence[i]=" ") then 
             n_words:= n_words + 1
         end_if
     end_for;
-    for j from 1 to lngth do// counting the number of values
+    for j from 1 to lngth step 1 do// counting the number of values
         if (sentence[j]="a" Or sentence[i]="e" Or sentence[i]="i" Or sentence[i]="o" Or sentence[i]="u" Or sentence[i]="y") then 
             n_vowels:= n_vowels + 1
         end_if
